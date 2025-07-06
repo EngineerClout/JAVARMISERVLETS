@@ -204,39 +204,39 @@ If you prefer not to build or download the full RMI backend code, you can use th
 > **NB:** `After running the app, You should be able to test the interfaces and obtain results as shown in the following screenshots.`
 
 ### 1. Fruit Engine Server Running  
-![Fruit Engine Server Running](./images/GeneratingReceiptScreenOneAddingFruitToCart.png)
+![Fruit Engine Server Running](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/GeneratingReceiptScreenOneAddingFruitToCart.png)
 *Screenshot: Generating a receipt screen, Specifying the fruit to add to cart.*
 
 ### 2. Tomcat Web Server Initialized  
-![Tomcat Web Server Initialized](./images/GeneratingReceiptListOfItemsInCart.png)
+![Tomcat Web Server Initialized](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/GeneratingReceiptListOfItemsInCart.png)
 *Screenshot: Screenshot showing All items in cart.*
 
 ### 3. Android App Demos
 
 - **Add Fruit Screen**  
-  ![Add New Fruit (Peach)](./images/AddnewFruitCalledPeach.png)
+  ![Add New Fruit (Peach)](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/AddnewFruitCalledPeach.png)
   *Screenshot: Adding a new fruit (Peach) to the price table.*
   
-  ![Trying To Add Existing Fruit](./images/TryingToAddExistingFruit.png)
+  ![Trying To Add Existing Fruit](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/TryingToAddExistingFruit.png)
   *Screenshot: Attempting to add an existing fruit (error handling).*  
 
 - **Update Fruit Screen**  
-  ![Update Fruit Price of Peach](./images/UpdateFruitPriceOfPeach.png)
+  ![Update Fruit Price of Peach](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/UpdateFruitPriceOfPeach.png)
   *Screenshot: Updating the price of Peach.*
 
 - **Delete Fruit Screen**  
-  ![Confirm Fruit Deletion](./images/ConfirmFruitDeletion.png)
+  ![Confirm Fruit Deletion](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/ConfirmFruitDeletion.png)
   *Screenshot: Confirming deletion of a fruit.*
   
-  ![Fruit Deleted Successfully](./images/FruitDeletedSuccessfully.png)
+  ![Fruit Deleted Successfully](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/FruitDeletedSuccessfully.png)
   *Screenshot: Fruit deleted successfully message.*
 
 - **Query Fruit and Calculate Cost**  
-  ![Calculate Cost Of Fruit](./images/CalculateCostOfFruit.png)
+  ![Calculate Cost Of Fruit](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/CalculateCostOfFruit.png)
   *Screenshot: Querying fruit price and calculating cost.*
 
 - **Print Receipt**  
-  ![Generated Final Receipt](./images/GeneratedFinalReceipt.png)
+  ![Generated Final Receipt](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/GeneratedFinalReceipt.png)
   *Screenshot: Generated receipt showing cost, amount given, change, and cashier.*
 
 ---
@@ -247,17 +247,17 @@ If you prefer not to build or download the full RMI backend code, you can use th
 - Day 2: Set up the backend and implemented the core RMI classes.
 - Day 3: Added servlet integration and tested RMI locally.
 
-![RMI Engine And Server Logs](./images/ANDROIDAPP_RMIAPPLOGS.png)
+![RMI Engine And Server Logs](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/ANDROIDAPP_RMIAPPLOGS.png)
 
   *Screenshot: Screenshot shwoing logs from RMI ENGINE AND SERVER Logs DURING THE DEVELOPEMNT..*
 - Day 4: Built the Android app UI and network module.
 
-![Android App Logs](./images/FruitServiceEngine_AndroidLogCat.png)
+![Android App Logs](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/FruitServiceEngine_AndroidLogCat.png)
 
   *Screenshot: Screenshot shwoing logs from ANDROID APP DURING THE DEVELOPEMNT..*
 - Day 5: Integrated client and server, tested all features.
 
-![Final Deployment](./images/FinalDeployment.png       )
+![Final Deployment](https://raw.githubusercontent.com/EngineerClout/JAVARMISERVLETS/refs/heads/ft-servlets/images/FinalDeployment.png       )
 
   *Screenshot: Screenshot shwoing Testing the final deployment to TomCat 9.0 server Locally..*
 - Day 6: Finalized documentation and prepared the demo.

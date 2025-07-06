@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Add Fruit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Raleway, sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #d7d2cc, #304352);
-            color: #333;
+            background: linear-gradient(90deg, #C7C5F4, #776BCC);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,76 +24,278 @@
             margin: 0;
         }
 
-        .form-container {
-            background: white;
-            padding: 2rem 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 100%;
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        h2 {
+        .screen {
+            background: linear-gradient(90deg, #5D54A4, #7C78B8);
+            position: relative;
+            height: 600px;
+            width: 400px;
+            box-shadow: 0px 0px 24px #5C5696;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .screen__content {
+            z-index: 1;
+            position: relative;
+            height: 100%;
+            padding: 40px;
+        }
+
+        .screen__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+        }
+
+        .screen__background__shape {
+            transform: rotate(45deg);
+            position: absolute;
+        }
+
+        .screen__background__shape1 {
+            height: 520px;
+            width: 520px;
+            background: #FFF;
+            top: -50px;
+            right: 120px;
+            border-radius: 0 72px 0 0;
+        }
+
+        .screen__background__shape2 {
+            height: 220px;
+            width: 220px;
+            background: #6C63AC;
+            top: -172px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape3 {
+            height: 540px;
+            width: 190px;
+            background: linear-gradient(270deg, #5D54A4, #6A679E);
+            top: -24px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape4 {
+            height: 400px;
+            width: 200px;
+            background: #7E7BB9;
+            top: 420px;
+            right: 50px;
+            border-radius: 60px;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-icon {
             text-align: center;
             margin-bottom: 1.5rem;
-            color: #304352;
         }
 
-        input[type="text"],
-        input[type="number"] {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
+        .form-icon i {
+            font-size: 3rem;
+            color: #E8E6FF;
+            opacity: 0.8;
         }
 
-        button {
+        .form {
             width: 100%;
-            padding: 0.75rem;
-            background-color: #304352;
-            color: white;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .form__field {
+            padding: 20px 0px;
+            position: relative;
+        }
+
+        .form__icon {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            color: #7875B5;
+            font-size: 1.1rem;
+        }
+
+        .form__input {
             border: none;
-            border-radius: 8px;
+            border-bottom: 2px solid #D1D1D4;
+            background: none;
+            padding: 10px;
+            padding-left: 30px;
+            font-weight: 700;
+            width: 100%;
+            transition: .2s;
+            color: #fff;
             font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
         }
 
-        button:hover {
-            background-color: #1e2a35;
+        .form__input::placeholder {
+            color: #B8B5E0;
+            opacity: 0.8;
+        }
+
+        .form__input:active,
+        .form__input:focus,
+        .form__input:hover {
+            outline: none;
+            border-bottom-color: #6A679E;
+        }
+
+        .form__submit {
+            background: #fff;
+            font-size: 14px;
+            margin-top: 30px;
+            padding: 16px 20px;
+            border-radius: 26px;
+            border: 1px solid #D4D3E8;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            color: #4C489D;
+            box-shadow: 0px 2px 2px #5C5696;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .form__submit:active,
+        .form__submit:focus,
+        .form__submit:hover {
+            border-color: #6A679E;
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0px 4px 8px #5C5696;
+        }
+
+        .button__icon {
+            font-size: 18px;
+            margin-left: 10px;
+            color: #7875B5;
         }
 
         .message {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
         .success {
-            color: green;
+            background: rgba(40, 167, 69, 0.2);
+            color: #d4edda;
+            border: 1px solid rgba(40, 167, 69, 0.5);
         }
 
         .error {
-            color: red;
+            background: rgba(220, 53, 69, 0.2);
+            color: #f8d7da;
+            border: 1px solid rgba(220, 53, 69, 0.5);
+        }
+
+        /* Loading state */
+        .form__submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #7875B5;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .screen {
+                width: 350px;
+                height: 550px;
+            }
+
+            .screen__content {
+                padding: 30px;
+            }
+
+            .form-title {
+                font-size: 1.7rem;
+            }
         }
     </style>
 </head>
 <body>
-<div class="form-container">
-    <h2>Add a Fruit</h2>
-    <form id="fruitForm">
-        <input type="text" id="fruitName" name="fruitName" placeholder="Fruit Name" required />
-        <input type="number" id="pricePerKg" name="pricePerKg" placeholder="Price per Kg" step="0.01" required />
-        <button type="submit">Submit</button>
-        <div id="responseMessage" class="message"></div>
-    </form>
+<div class="container">
+    <div class="screen">
+        <div class="screen__content">
+            <div class="form-icon">
+                <i class="fas fa-apple-alt"></i>
+            </div>
+            <h2 class="form-title">Add a Fruit</h2>
+            <form id="fruitForm" class="form">
+                <div class="form__field">
+                    <i class="form__icon fas fa-seedling"></i>
+                    <input type="text" id="fruitName" name="fruitName" class="form__input" placeholder="Fruit Name" required />
+                </div>
+                <div class="form__field">
+                    <i class="form__icon fas fa-dollar-sign"></i>
+                    <input type="number" id="pricePerKg" name="pricePerKg" class="form__input" placeholder="Price per Kg" step="0.01" required />
+                </div>
+                <button type="submit" class="form__submit">
+                    <span class="button__text">Add Fruit</span>
+                    <i class="button__icon fas fa-plus"></i>
+                </button>
+                <div id="responseMessage" class="message" style="display: none;"></div>
+            </form>
+        </div>
+        <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+        </div>
+    </div>
 </div>
 
 <script>
     const form = document.getElementById("fruitForm");
     const messageDiv = document.getElementById("responseMessage");
+    const submitButton = form.querySelector('.form__submit');
+    const buttonText = submitButton.querySelector('.button__text');
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -94,6 +304,10 @@
         const pricePerKg = parseFloat(document.getElementById("pricePerKg").value);
 
         const payload = { fruitName, pricePerKg };
+
+        // Show loading state
+        submitButton.disabled = true;
+        buttonText.innerHTML = '<div class="spinner"></div>Adding...';
 
         try {
             const response = await fetch("/api/fruits/add", {
@@ -109,18 +323,152 @@
             if (result.success) {
                 messageDiv.textContent = result.message;
                 messageDiv.className = "message success";
+                messageDiv.style.display = "block";
                 form.reset();
             } else {
                 messageDiv.textContent = result.message;
                 messageDiv.className = "message error";
+                messageDiv.style.display = "block";
             }
 
         } catch (error) {
             messageDiv.textContent = "Failed to connect to the server.";
             messageDiv.className = "message error";
+            messageDiv.style.display = "block";
             console.error("Error:", error);
+        } finally {
+            // Reset button state
+            submitButton.disabled = false;
+            buttonText.innerHTML = 'Add Fruit';
         }
     });
 </script>
 </body>
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+<!--    <title>Add Fruit</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: 'Segoe UI', sans-serif;-->
+<!--            background: linear-gradient(to right, #d7d2cc, #304352);-->
+<!--            color: #333;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--            height: 100vh;-->
+<!--            margin: 0;-->
+<!--        }-->
+
+<!--        .form-container {-->
+<!--            background: white;-->
+<!--            padding: 2rem 2.5rem;-->
+<!--            border-radius: 12px;-->
+<!--            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);-->
+<!--            max-width: 400px;-->
+<!--            width: 100%;-->
+<!--        }-->
+
+<!--        h2 {-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 1.5rem;-->
+<!--            color: #304352;-->
+<!--        }-->
+
+<!--        input[type="text"],-->
+<!--        input[type="number"] {-->
+<!--            width: 100%;-->
+<!--            padding: 0.75rem;-->
+<!--            margin-bottom: 1rem;-->
+<!--            border: 1px solid #ccc;-->
+<!--            border-radius: 8px;-->
+<!--            font-size: 1rem;-->
+<!--        }-->
+
+<!--        button {-->
+<!--            width: 100%;-->
+<!--            padding: 0.75rem;-->
+<!--            background-color: #304352;-->
+<!--            color: white;-->
+<!--            border: none;-->
+<!--            border-radius: 8px;-->
+<!--            font-size: 1rem;-->
+<!--            cursor: pointer;-->
+<!--            transition: background 0.3s;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            background-color: #1e2a35;-->
+<!--        }-->
+
+<!--        .message {-->
+<!--            margin-top: 1rem;-->
+<!--            text-align: center;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--        .success {-->
+<!--            color: green;-->
+<!--        }-->
+
+<!--        .error {-->
+<!--            color: red;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="form-container">-->
+<!--    <h2>Add a Fruit</h2>-->
+<!--    <form id="fruitForm">-->
+<!--        <input type="text" id="fruitName" name="fruitName" placeholder="Fruit Name" required />-->
+<!--        <input type="number" id="pricePerKg" name="pricePerKg" placeholder="Price per Kg" step="0.01" required />-->
+<!--        <button type="submit">Submit</button>-->
+<!--        <div id="responseMessage" class="message"></div>-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    const form = document.getElementById("fruitForm");-->
+<!--    const messageDiv = document.getElementById("responseMessage");-->
+
+<!--    form.addEventListener("submit", async (e) => {-->
+<!--        e.preventDefault();-->
+
+<!--        const fruitName = document.getElementById("fruitName").value.trim();-->
+<!--        const pricePerKg = parseFloat(document.getElementById("pricePerKg").value);-->
+
+<!--        const payload = { fruitName, pricePerKg };-->
+
+<!--        try {-->
+<!--            const response = await fetch("/api/fruits/add", {-->
+<!--                method: "POST",-->
+<!--                headers: {-->
+<!--                    "Content-Type": "application/json"-->
+<!--                },-->
+<!--                body: JSON.stringify(payload)-->
+<!--            });-->
+
+<!--            const result = await response.json();-->
+
+<!--            if (result.success) {-->
+<!--                messageDiv.textContent = result.message;-->
+<!--                messageDiv.className = "message success";-->
+<!--                form.reset();-->
+<!--            } else {-->
+<!--                messageDiv.textContent = result.message;-->
+<!--                messageDiv.className = "message error";-->
+<!--            }-->
+
+<!--        } catch (error) {-->
+<!--            messageDiv.textContent = "Failed to connect to the server.";-->
+<!--            messageDiv.className = "message error";-->
+<!--            console.error("Error:", error);-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
