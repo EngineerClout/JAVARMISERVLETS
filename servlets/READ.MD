@@ -1,0 +1,1 @@
+### the servlet layer that will handle HTTP requests from the Android client: SERVLET IMPLEMENTATIONS
