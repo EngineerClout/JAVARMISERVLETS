@@ -112,7 +112,7 @@ interface FruitServiceApi {
    [GitHub Repository – Fruit Service Engine](https://github.com/EngineerClout/JAVARMISERVLETS.git)
 
    
-   [GitHub Repository – Fruit Service Engine](https://github.com/EngineerClout/JAVARMISERVLETS.git)
+   [GitLab Repository – Fruit Service Engine](https://gitlab.com/bkamausafaricom/rmi_servlets_assignment.git)
 
 2. **Build and deploy backend:**  
    - Open in IntelliJ IDEA.
@@ -205,11 +205,11 @@ If you prefer not to build or download the full RMI backend code, you can use th
 
 ### 1. Fruit Engine Server Running  
 ![Fruit Engine Server Running](./images/GeneratingReceiptScreenOneAddingFruitToCart.png)
-*Screenshot: RMI server running and ready for connections.*
+*Screenshot: Generating a receipt screen, Specifying the fruit to add to cart.*
 
 ### 2. Tomcat Web Server Initialized  
 ![Tomcat Web Server Initialized](./images/GeneratingReceiptListOfItemsInCart.png)
-*Screenshot: Tomcat 9.0 manager/logs showing successful backend deployment.*
+*Screenshot: Screenshot showing All items in cart.*
 
 ### 3. Android App Demos
 
@@ -246,8 +246,20 @@ If you prefer not to build or download the full RMI backend code, you can use th
 - Day 1: We reviewed the assignment and planned the architecture.
 - Day 2: Set up the backend and implemented the core RMI classes.
 - Day 3: Added servlet integration and tested RMI locally.
+
+![RMI Engine And Server Logs](./images/ANDROIDAPP_RMIAPPLOGS.png)
+
+  *Screenshot: Screenshot shwoing logs from RMI ENGINE AND SERVER Logs DURING THE DEVELOPEMNT..*
 - Day 4: Built the Android app UI and network module.
+
+![Android App Logs](./images/FruitServiceEngine_AndroidLogCat.png)
+
+  *Screenshot: Screenshot shwoing logs from ANDROID APP DURING THE DEVELOPEMNT..*
 - Day 5: Integrated client and server, tested all features.
+
+![Final Deployment](./images/FinalDeployment.png       )
+
+  *Screenshot: Screenshot shwoing Testing the final deployment to TomCat 9.0 server Locally..*
 - Day 6: Finalized documentation and prepared the demo.
 
 ---
