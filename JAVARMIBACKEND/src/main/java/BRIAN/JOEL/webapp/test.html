@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head><title>Test Servlet</title></head>
+<body>
+<h1>Test Add Fruit</h1>
+<button onclick="testAddFruit()">Add Pineapple</button>
+<div id="result"></div>
+
+<script>
+    function testAddFruit() {
+        fetch('/rmi/api/fruits/add', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({fruitName: 'pineapple', pricePerKg: 3.5})
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = 'Error: ' + error;
+            });
+    }
+</script>
+</body>
+</html>

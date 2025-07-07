@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RMI Assignment – Integration Setup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://media.istockphoto.com/id/2182751031/photo/businessman-pointing-icon-with-cloud-servers-website-management-data-storage-bandwidth-server.jpg?s=2048x2048&w=is&k=20&c=XKyVCybwxyRZpMZbucdKw-vZOeoGt2pJcIuIQLhbrrM=') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+        }
+
+        pre {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            color: #f8f9fa;
+            overflow-x: auto;
+        }
+
+        a {
+            color: #00f0ff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin-top: 5rem;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="glass">
+        <h2 class="text-success">RMI Assignment Deployed Successfully</h2>
+        <p class="lead text-warning">Welcome. The backend server is now  running.
+
+            Follow the instructions below to integrate and test the Android application.</p>
+        <p class="text-warning-emphasis fw-semibold">
+            Ensure the fruitComputeEngine is running as well.
+        </p>
+
+        <div class="section-title">1. Download Android Studio Project</div>
+        <ul>
+            <li>Clone the repository: <br>
+                <code>https://github.com/YOUR_USERNAME/YOUR_PROJECT_REPO</code>
+                <!-- Replace with your actual repo -->
+            </li>
+            <li>Open the project in Android Studio.</li>
+        </ul>
+
+        <div class="section-title">2. Configure NetworkModule.kt</div>
+        <ul>
+            <li>Hotspot your machine <strong>from the phone</strong> you’ll use for testing.</li>
+            <li>On your computer, open Command Prompt and run:</li>
+        </ul>
+        <pre>ipconfig</pre>
+        <ul>
+            <li>Find your <strong>IPv4 address</strong> (e.g., <code>192.168.43.172</code>).</li>
+            <li>In Android Studio, open:
+                <br><code>com.example.myapplication.networkservice.NetworkModule.kt</code>
+            </li>
+            <li>Update <strong>line 13</strong> to reflect your IP:</li>
+        </ul>
+        <pre>
+
+            private const val BASE_URL = "http://YOUR_IPV4_ADDRESS:8080/RMIASSIGNMENT_war_exploded/"
+
+            </pre>
+
+        <div class="section-title">3. Build and Run</div>
+        <ul>
+            <li>Sync Gradle and build the project.</li>
+            <li>Run the app on the physical device providing the hotspot.</li>
+            <li>Ensure the device can reach the server at your IPv4 address.</li>
+        </ul>
+
+        <div class="section-title">4. Test the Servlets</div>
+        <ul>
+            <li>Once the backend "Fruit Engine" is running, interact with the provided UI.</li>
+            <li>You can test using:
+                <ul>
+                    <li><a href="add-fruit-form.html">Add Fruit Servlet</a></li>
+                    <li><a href="webapp//api/receipt/generate">Basic Servlet Test</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <p class="text-light mt-4">If you face connection issues, check firewall settings and make sure port <strong>8080</strong> is open.</p>
+    </div>
+</div>
+</body>
+</html>
+
+
